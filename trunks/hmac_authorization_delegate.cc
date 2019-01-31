@@ -299,7 +299,7 @@ void HmacAuthorizationDelegate::AesOperation(std::string* parameter,
   AES_cfb128_encrypt(reinterpret_cast<const unsigned char*>(parameter->data()),
                      decrypted, parameter->size(), &key, aes_iv, &iv_offset,
                      operation_type);
-  memcpy(base::string_as_array(parameter), decrypted, parameter->size());
+  memcpy(string_as_array(parameter), decrypted, parameter->size());
 }
 
 void HmacAuthorizationDelegate::RegenerateCallerNonce() {
